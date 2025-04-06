@@ -1,0 +1,41 @@
+# Ignore compiled Python files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Ignore virtual environments
+.env/
+.venv/
+env/
+venv/
+mfa_env/
+mfa-venv-pip/
+.mfa_env/
+
+# Ignore output files
+*.srt
+*.TextGrid
+*.wav
+*.mp3
+
+# Ignore temp folders and cache
+*.tmp
+*.log
+*.bak
+*.swp
+.DS_Store
+*.idea/
+.vscode/
+*.autosave
+
+# Ignore installer output
+dist/
+build/
+*.spec
+
+# Ignore MFA model cache
+~/.local/share/mfa/
+
+# Ignore data files
+/audio/
+/scripts/
