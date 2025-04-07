@@ -1,6 +1,6 @@
 ### `README.md`
 
-```markdown
+
 # SRT Subtitle Generator using Montreal Forced Aligner (MFA) & PyQt6
 
 This application provides a graphical interface to generate SRT subtitle files from an audio file and a script using Montreal Forced Aligner (MFA). 
@@ -8,25 +8,25 @@ It supports both short and long video formats with configurable subtitle length.
 
 ---
 
-## Basic Implementation
+## 🔧 Basic Implementation
 
 ### Workflow:
-1. User Input: Upload an audio file (WAV/MP3) and its corresponding script (TXT).
-2. MFA Alignment:
+1. **User Input**: Upload an audio file (WAV/MP3) and its corresponding script (TXT).
+2. **MFA Alignment**:
    - Uses a pretrained acoustic model and optionally a pronunciation dictionary.
    - Aligns audio with the script and produces a TextGrid file.
-3. Post-Processing:
+3. **Post-Processing**:
    - Parses the TextGrid file to extract word-level timestamps.
    - Re-injects original casing and punctuation from the script.
    - Groups words into sentences for subtitle lines.
    - Converts them to standard `.srt` format.
-4. GUI:
+4. **GUI**:
    - Built with PyQt6 for user-friendly interaction.
    - Logs progress and prompts for SRT file saving location.
 
 ---
 
-## Environment Setup
+## 📦 Environment Setup
 
 ### 1. Install Montreal Forced Aligner (MFA)
 
@@ -47,7 +47,7 @@ pip install PyQt6==6.7.1
 
 ---
 
-## File Structure
+## 📁 File Structure
 
 ```
 .
@@ -63,7 +63,7 @@ pip install PyQt6==6.7.1
 
 ---
 
-## Notes
+## 📥 Notes
 
 - Ensure `mfa` CLI is available in your `PATH` (after installing via conda).
 - If not using a dictionary, modify the `generate_subtitles` function and remove the `dictionary_path` argument.
@@ -71,7 +71,7 @@ pip install PyQt6==6.7.1
 
 ---
 
-## Resources
+## 🔗 Resources
 
 - Montreal Forced Aligner: https://montreal-forced-aligner.readthedocs.io/
 - PyQt6 Docs: https://doc.qt.io/qtforpython/
@@ -84,7 +84,7 @@ pip install PyQt6==6.7.1
 ### `Miniconda`
 conda==24.9.2
 
-### `mfa_env.yml` — Conda Environment File for MFA
+### ✅ `mfa_env.yml` — Conda Environment File for MFA
 
 ```
 name: mfa_env
@@ -98,7 +98,7 @@ dependencies:
 
 ---
 
-### `requirements.txt` — Pip Requirements for GUI
+### ✅ `requirements.txt` — Pip Requirements for GUI
 
 ```txt
 PyQt6==6.7.1
