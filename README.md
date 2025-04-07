@@ -77,9 +77,6 @@ pip install PyQt6==6.7.1
 - PyQt6 Docs: https://doc.qt.io/qtforpython/
 
 ---
-```
-
----
 
 ### `Miniconda`
 conda==24.9.2
