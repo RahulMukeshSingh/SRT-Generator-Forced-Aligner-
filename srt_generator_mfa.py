@@ -42,23 +42,29 @@ def seconds_to_timestamp(seconds: float) -> str:
 
 def parse_textgrid(file_path: str) -> list:
     """
-    Parse a TextGrid file and extract word intervals.
+    Parse a TextGrid file and extract word intervals only from the 'words' tier.
     Returns a list of dictionaries with keys: xmin, xmax, text.
     """
     intervals = []
     current_interval = {}
+    in_words_tier = False
+
     with open(file_path, "r", encoding="utf-8") as f:
         for line in f:
             line = line.strip()
-            if line.startswith("xmin ="):
+            if line.startswith("name ="):
+                tier_name = line.split("=")[1].strip().strip('"')
+                in_words_tier = (tier_name.lower() == "words")
+            elif in_words_tier and line.startswith("xmin ="):
                 current_interval["xmin"] = float(line.split("=")[1].strip())
-            elif line.startswith("xmax ="):
+            elif in_words_tier and line.startswith("xmax ="):
                 current_interval["xmax"] = float(line.split("=")[1].strip())
-            elif line.startswith("text ="):
+            elif in_words_tier and line.startswith("text ="):
                 text_val = line.split("=", 1)[1].strip().strip('"')
                 current_interval["text"] = text_val
                 intervals.append(current_interval)
                 current_interval = {}
+
     return intervals
 
 def group_words_into_sentences(word_intervals: list, max_chars: int) -> list:
@@ -188,9 +194,9 @@ def main(video_type: str, audio_file: str, script_file: str):
 if __name__ == "__main__":
     # Example usage: update these variables with the correct paths and settings.
     video_type = "Shorts"  # "Shorts" for vertical, "Long" for horizontal
-    audio_file = "audio/Ghibli_Art_English.mp3"      # TTS-generated audio file (mp3)
+    audio_file = "audio/part.mp3"      # TTS-generated audio file (mp3)
     
-    script_file = "scripts/Ghibli_Art.txt"    # Script text file
+    script_file = "scripts/Ghibli_Art_Hinglish.txt"    # Script text file
     
     main(video_type, audio_file, script_file)
 
