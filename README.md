@@ -1,4 +1,4 @@
-### `README.md`
+### `README.md` (Soon to be updated)
 
 
 # SRT Subtitle Generator using Montreal Forced Aligner (MFA) & PyQt6
