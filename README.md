@@ -57,7 +57,7 @@ pip install PyQt6==6.7.1
 ├── models/
 │   └── english_mfa.zip         # Acoustic model (download from MFA website)
 ├── mfa_env.yml               # Conda environment file for MFA
-├── requirements.txt     # Pip dependencies for GUI
+├── requirements.txt     # Pip dependencies
 └── README.md
 ```
 
