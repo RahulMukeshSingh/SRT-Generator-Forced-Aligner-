@@ -131,7 +131,7 @@ def main(video_type: str, audio_file: str, script_file: str):
     if video_type.lower() == "shorts":
         max_chars = 30  # fewer words per line for smaller screens
     else:
-        max_chars = 60  # more words per line for horizontal videos
+        max_chars = 50  # more words per line for horizontal videos
 
     with tempfile.TemporaryDirectory() as corpus_dir, tempfile.TemporaryDirectory() as output_dir:
         base_name = os.path.splitext(os.path.basename(script_file))[0]
