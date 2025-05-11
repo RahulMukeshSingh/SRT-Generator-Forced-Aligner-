@@ -231,8 +231,7 @@ class SubtitleGUI(QWidget):
                 self.acoustic_model_path,
                 self.output_dir.name,
                 "--use_g2p", "True",
-                "--single_speaker",
-                "--clean"
+                "--single_speaker"
             ]
             self.log(f"Running command: {' '.join(command)}")
             self.process.start("mfa", command[1:])
